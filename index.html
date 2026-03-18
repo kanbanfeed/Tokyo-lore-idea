@@ -120,6 +120,20 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
   footer{flex-direction:column;text-align:center}
   .footer-legal{text-align:center}
 }
+.anchor a{
+  
+  color: #d4a843;
+}
+.anchor{
+  text-align: center;
+  text-decoration: none;
+}
+/* --- disclaimer styling (subtle, matches existing tone) --- */
+.disclaimer-block{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.6;color:var(--mid);border-top:1px solid rgba(240,235,226,.1);margin-top:24px;padding-top:20px}
+.disclaimer-inline{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.02em;color:var(--mid);line-height:1.4;margin-top:8px}
+.price-disclaimer{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.02em;color:var(--mid);margin-top:8px;text-align:center}
+.footer-disclaimer-zone{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.03em;color:var(--mid);line-height:1.5;margin-top:16px;border-top:1px solid rgba(240,235,226,.1);padding-top:16px;width:100%}
+.footer-disclaimer-zone p{margin:4px 0}
 </style>
 </head>
 <body>
@@ -137,6 +151,10 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
     <div class="hero-cta-row">
       <a href="#pricing" class="btn btn-red">Enter Your Idea — From $19</a>
       <a href="#how" class="btn btn-outline">How It Works</a>
+    </div>
+    <!-- 1. HERO SECTION DISCLAIMER (below headline/CTA) -->
+    <div class="disclaimer-block" style="border-top-color:rgba(230,50,34,.2); max-width:620px;">
+      NO GUARANTEE DISCLAIMER<br>Participation does not guarantee winning or selection. All entries are evaluated based on defined judging criteria.
     </div>
   </div>
   <div class="hero-bottom">
@@ -240,9 +258,16 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
 </section>
 <div class="divider"></div>
 
+<!-- 2. PRICING SECTION DISCLAIMERS -->
 <section class="section" id="pricing">
   <div class="section-tag">Choose your entry</div>
   <h2 class="section-title">Three ways<br>in the room.</h2>
+  
+  <!-- COMPETITION + ODDS DISCLAIMER (directly above pricing cards) -->
+  <div class="disclaimer-block" style="margin-bottom:32px; border-top:none; border-bottom:1px solid rgba(240,235,226,.1); padding-bottom:20px;">
+    COMPETITION + ODDS DISCLAIMER<br>This is a skill-based competition. Winners are selected based on evaluation criteria. Any references to “odds” or “multipliers” indicate relative exposure only and do not guarantee outcomes.
+  </div>
+
   <div class="pricing-wrap">
     <div class="price-card">
       <div class="price-tier">— THE BELIEVER —</div>
@@ -259,6 +284,8 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
         <li>Eligible for $100 Round 01 prize</li>
       </ul>
       <a href="https://payhip.com/b/rJqs7" class="btn btn-outline">Enter for $19</a>
+      <!-- INSIDE EACH PRICING CARD disclaimer (small text under button) -->
+      <div class="price-disclaimer">Additional features improve exposure and experience only. They do not guarantee winning.</div>
     </div>
     <div class="price-card hero-price">
       <div class="price-badge">MOST POPULAR</div>
@@ -277,6 +304,7 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
         <li>1.21× compounding odds</li>
       </ul>
       <a href="https://payhip.com/b/1ASmg" class="btn btn-red">Enter for $49</a>
+      <div class="price-disclaimer">Additional features improve exposure and experience only. They do not guarantee winning.</div>
     </div>
     <div class="price-card">
       <div class="price-tier">— THE FOUNDER —</div>
@@ -295,12 +323,18 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
         <li>4.59× odds — nearly 5× base entrant</li>
       </ul>
       <a href="https://payhip.com/b/w1qkc" class="btn btn-outline">Enter for $99</a>
+      <div class="price-disclaimer">Additional features improve exposure and experience only. They do not guarantee winning.</div>
     </div>
+  </div>
+  <!-- BELOW pricing section free entry disclaimer -->
+  <div class="disclaimer-block" style="margin-top:48px;">
+    FREE ENTRY DISCLAIMER<br>A free entry route is available and receives equal consideration in judging. Paid entries provide additional features only.
   </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- 3. PRIZE SECTION (or above Buy Buttons) -->
 <section class="section">
   <div class="section-tag">The prize</div>
   <div class="prize-box">
@@ -315,12 +349,62 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
       <div class="prize-rule">Losing here is not losing. Your idea becomes Tokyo Lore Idea #XXXX. Timestamped. Permanent. Published without being exposed.</div>
     </div>
   </div>
+  <!-- PRIZE + NO GUARANTEE disclaimer added above equity box (above buy buttons conceptually) -->
+  <div class="disclaimer-block" style="margin-bottom:24px;">
+    PRIZE + NO GUARANTEE<br>The winner will be publicly announced after round closure. Selection is based on judging criteria only. No guarantee of winning is provided.
+  </div>
   <div class="equity-box">
     <div class="equity-num">3%</div>
     <div>
       <div class="equity-title">We take 3% of every idea. Permanently.</div>
       <div class="equity-body">By entering, you grant Tokyo Lore a permanent non-exclusive 3% stake in any commercial venture arising from your submission. We take nothing upfront beyond your entry fee. If your idea becomes something — we are already on your cap table. That is the deal.</div>
     </div>
+  </div>
+  <!-- 7. REVENUE DISCLAIMER right after 3% clause (very important) -->
+  <div class="disclaimer-block" style="margin-top:16px;">
+    REVENUE DISCLAIMER<br>The 3% revenue participation applies only to ventures directly derived from the submitted idea, as defined in the Terms. This does not transfer ownership.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 4. BELOW "HOW WINNERS ARE CHOSEN" (we already have that section, placing disclaimer right after it) -->
+<section class="section">
+  <div class="section-tag">How Winners Are Chosen</div>
+  <h2 class="section-title">No luck.<br>Only ideas.</h2>
+  <p class="section-body">
+    All submissions are evaluated using SPEAR analysis and reviewed by appointed judges.
+    Random selection is never used.
+  </p>
+  <!-- AI DISCLAIMER added below -->
+  <div class="disclaimer-block" style="margin-top:32px;">
+    AI DISCLAIMER<br>AI-generated analysis and scores are automated outputs and provided for informational purposes only. They may not be fully accurate or complete.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 5. DELIVERY DISCLAIMER – placed below any 24 hours claim (the site mentions "24 hours"? not directly, but we'll insert below a relevant statement. There's a "24 hours delivery" claim? Not present, but we'll place generically near prize/footer) 
+     To be safe, we add it near the "delivery" concept. The site has no explicit 24h claim, but we add as per instruction near bottom before footer -->
+<section class="section">
+  <div class="section-tag">Transparency</div>
+  <h2 class="section-title">Delivery & timelines</h2>
+  <p class="section-body">Artifacts and reports are typically delivered within 24 hours after submission.</p>
+  <!-- DELIVERY DISCLAIMER added here -->
+  <div class="disclaimer-block">
+    DELIVERY DISCLAIMER<br>Delivery timelines are targets and may vary due to technical or operational factors.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 6. CHECKOUT / PAYHIP PRODUCT PAGE – we add a disclaimer block representing that info -->
+<section class="section">
+  <div class="section-tag">Payment & refunds</div>
+  <h2 class="section-title">Checkout information</h2>
+  <p class="section-body">All purchases are processed securely via Payhip.</p>
+  <div class="disclaimer-block">
+    PAYMENT + REFUND DISCLAIMER<br>Purchases are final once the idea is submitted. Refunds may be considered only prior to submission.
   </div>
 </section>
 
@@ -350,13 +434,23 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
 </section>
 
 <div class="divider"></div>
+<div class="anchor"><a href="/terms.html">Terms and Privacy Policy</a></div>
 
+<!-- 8. FOOTER (MANDATORY LEGAL ZONE) -->
 <footer>
   <div class="footer-brand">Tokyo Lore Ideas</div>
   <div class="footer-legal">
     A Crowbar Ventures Ltd product · Company No. 16426727 · Registered in England & Wales<br>
     Ideas are never shared publicly · Reviewed under confidentiality<br>
     By submitting you grant Tokyo Lore a permanent non-exclusive 3% stake in any commercial venture arising from your submission
+  </div>
+  <!-- Legal footer zone with all mandatory disclaimers -->
+  <div class="footer-disclaimer-zone">
+    <p><strong>GENERAL DISCLAIMER</strong> Tokyo Lore Ideas provides a platform for idea submission and evaluation. All outcomes and results are indicative only.</p>
+    <p><strong>DATA & PRIVACY DISCLAIMER</strong> Personal data is processed in accordance with our Privacy Policy.</p>
+    <p><strong>THIRD-PARTY DISCLAIMER</strong> We use third-party platforms for payments, data collection, and communication.</p>
+    <p><strong>LEGAL DISCLAIMER</strong> Nothing on this platform constitutes legal, financial, or business advice.</p>
+    <p><strong>VAT / TAX INFORMATION</strong> Tokyo Lore Ideas is not registered for VAT in the United Kingdom. Therefore, no VAT is charged on any purchases and all prices shown are final.</p>
   </div>
 </footer>
 

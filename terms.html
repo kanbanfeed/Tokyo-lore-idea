@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokyo Lore Ideas · terms & privacy</title>
+  <!-- same vibe: Bebas, Crimson, IBM Plex Mono, noir/red/gold palette -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #080808;
+      --white: #f0ebe2;
+      --red: #e63222;
+      --gold: #d4a843;
+      --dim: #2a2a2a;
+      --mid: #666;
+      --fog: rgba(240,235,226,0.06);
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Crimson Pro', serif;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    /* subtle noise overlay (exactly like homepage) */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+    }
+    @media(max-width:768px){
+  
+  footer{flex-direction:column;text-align:center}
+  .footer-legal{text-align:center}
+}
+    .footer-disclaimer-zone{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.03em;color:var(--mid);line-height:1.5;margin-top:16px;border-top:1px solid rgba(240,235,226,.1);padding-top:16px;width:100%}
+.footer-disclaimer-zone p{margin:4px 0;}
+    
+footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold);letter-spacing:.05em}
+.footer-legal{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.15em;color:var(--mid);text-align:right;line-height:1.8}
+
+    .document-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      background: rgba(10, 8, 8, 0.7); /* deep translucent background */
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(240, 235, 226, 0.1);
+      box-shadow: 0 20px 40px -12px rgba(230, 50, 34, 0.2);
+      padding: 3rem 2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* headings: Bebas for big titles, Crimson for section headers, mono for small stuff */
+    h1, h2, h3, .main-headline, .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.02em;
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    .main-headline {
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      line-height: 0.95;
+      border-bottom: 3px double var(--red);
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      line-height: 1.1;
+      border-left: 6px solid var(--gold);
+      padding-left: 1rem;
+      margin: 2.5rem 0 1.2rem 0;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+
+    .subhead {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    p, li, address, .legal-line, .small-note {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.1rem;
+      color: rgba(240, 235, 226, 0.85);
+      line-height: 1.7;
+    }
+
+    .bold, strong {
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(212, 168, 67, 0.2);
+      margin: 2.5rem 0;
+    }
+
+    .divider-light {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+      margin: 2rem 0;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    ul li {
+      margin-bottom: 0.75rem;
+      position: relative;
+      padding-left: 1.8rem;
+    }
+
+    ul li::before {
+      content: "→";
+      color: var(--red);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.9rem;
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+    }
+
+    /* special disclosure box with fog background (like homepage truth cards) */
+    .disclosure-box {
+      background: var(--fog);
+      border: 1px solid rgba(230, 50, 34, 0.25);
+      padding: 2rem 2.2rem;
+      border-radius: 0; /* sharp edges, like homepage */
+      margin: 2.5rem 0 1.5rem 0;
+    }
+
+    .cookie-note {
+      background: rgba(212, 168, 67, 0.08);
+      border: 1px solid rgba(212, 168, 67, 0.3);
+      padding: 1rem 2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--gold);
+      display: inline-block;
+      margin: 1rem 0;
+    }
+
+    address {
+      font-style: normal;
+      background: rgba(240, 235, 226, 0.03);
+      padding: 1.2rem 1.8rem;
+      border-left: 3px solid var(--gold);
+      margin: 1.5rem 0;
+    }
+
+    .small-note {
+      font-size: 0.95rem;
+      color: var(--mid);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* preserve line breaks exactly */
+    .preserve-lines {
+      white-space: pre-line;
+    }
+
+    /* subtle link style if needed */
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--gold);
+    }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      .document-wrapper { padding: 2rem 1.5rem; }
+      .main-headline { font-size: 2.4rem; }
+      .section-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="document-wrapper">
+  <!-- exactly the same headline structure, all words intact -->
+  <h1 class="main-headline">TERMS & CONDITIONS</h1>
+  <p class="subhead">(UK Compliant – Tokyo Lore Ideas)</p>
+  <p><strong>Effective Date: 3-17-2026</strong><br>
+  <strong>Business Name:</strong> Tokyo Lore Ideas<br>
+  <strong>Contact Email:</strong> [Insert Email]<br>
+  <strong>Governing Law:</strong> England and Wales</p>
+  
+  <div class="divider-light"></div>
+
+  <!-- 1. ABOUT US -->
+  <h2 class="section-title">1. ABOUT US</h2>
+  <p>Tokyo Lore Ideas (“we”, “us”, “our”) operates a skill-based idea submission platform where users may submit original ideas for evaluation and participation in a structured competition.</p>
+  
+  <!-- 2. ACCEPTANCE OF TERMS -->
+  <h2 class="section-title">2. ACCEPTANCE OF TERMS</h2>
+  <p>By accessing the website or purchasing an entry, you agree to be legally bound by these Terms.</p>
+  
+  <!-- 3. ELIGIBILITY -->
+  <h2 class="section-title">3. ELIGIBILITY</h2>
+  <ul>
+    <li>You must be at least 18 years old</li>
+    <li>You must submit original work owned by you</li>
+    <li>You must provide accurate information</li>
+  </ul>
+  
+  <!-- 4. COMPETITION STRUCTURE (UK PROMOTIONAL LAW COMPLIANT) -->
+  <h2 class="section-title">4. COMPETITION STRUCTURE (UK PROMOTIONAL LAW COMPLIANT)</h2>
+  <p>This is a skill-based competition and not a lottery.</p>
+  <p class="bold">Judging Criteria:</p>
+  <p>Entries are evaluated based on:</p>
+  <ul>
+    <li>Originality</li>
+    <li>Relevance to Tokyo</li>
+    <li>Practical feasibility</li>
+    <li>Creative merit</li>
+  </ul>
+  <p>Random selection is never used.</p>
+  
+  <!-- 5. ENTRY METHODS -->
+  <h2 class="section-title">5. ENTRY METHODS</h2>
+  <p class="bold">A. Paid Entry</p>
+  <p>Users may enter via paid tiers displayed on the website.</p>
+  <p class="bold">B. Free Entry Route (Required under UK law)</p>
+  <p>Users may enter for free by emailing:<br>
+  <strong>freeentry@tokyolore.com</strong></p>
+  <p>Conditions:</p>
+  <ul>
+    <li>Maximum 200 words</li>
+    <li>Full contact details required</li>
+    <li>Submitted before round closure</li>
+  </ul>
+  <p>Free entries:</p>
+  <ul>
+    <li>Are judged under identical criteria</li>
+    <li>Do not receive paid features (AI artifact, reports, bonuses)</li>
+  </ul>
+  
+  <!-- 6. ENTRY LIMITATION -->
+  <h2 class="section-title">6. ENTRY LIMITATION</h2>
+  <ul>
+    <li>Each round is limited to 100 entries only</li>
+    <li>Once full, the round is permanently closed</li>
+  </ul>
+  
+  <!-- 7. PRIZE DISCLOSURE (CONSUMER PROTECTION) -->
+  <h2 class="section-title">7. PRIZE DISCLOSURE (CONSUMER PROTECTION)</h2>
+  <p>• The winner will be publicly announced</p>
+  <p>Prize details: Tokyo Lore Ideas offers three entry tiers based on level of access and benefits:</p>
+  <ul>
+    <li>$19 — Believer Entry: Single-city submission with core evaluation and artifact</li>
+    <li>$49 — Hustler Entry: Expanded exposure across 3 cities with enhanced features and increased visibility</li>
+    <li>$99 — Founder Entry: Maximum reach across 16 cities with full analysis, priority visibility, and additional tools</li>
+  </ul>
+  <p>All tiers provide entry into Round 01 and are subject to the same judging criteria. Higher tiers offer additional features but do not guarantee winning outcomes.</p>
+  <p>All claims relating to odds or benefits are indicative only and do not guarantee outcomes.</p>
+  
+  <!-- 8. INTELLECTUAL PROPERTY RIGHTS -->
+  <h2 class="section-title">8. INTELLECTUAL PROPERTY RIGHTS</h2>
+  <p class="bold">Ownership</p>
+  <p>You retain full ownership of your submitted idea.</p>
+  <p class="bold">Licence Granted</p>
+  <p>By submitting, you grant Tokyo Lore Ideas a:</p>
+  <ul>
+    <li>Non-exclusive</li>
+    <li>Worldwide</li>
+    <li>Irrevocable licence</li>
+  </ul>
+  <p>to review, analyse, and archive your submission.</p>
+  
+  <!-- 9. REVENUE PARTICIPATION CLAUSE (LEGALLY STRUCTURED) -->
+  <h2 class="section-title">9. REVENUE PARTICIPATION CLAUSE (LEGALLY STRUCTURED)</h2>
+  <p>By submitting an idea, you agree that:</p>
+  <p>If your submitted idea is later developed into a commercial venture, Tokyo Lore Ideas shall be entitled to receive 3% of gross revenues derived directly from that idea.</p>
+  <p class="bold">Definitions:</p>
+  <ul>
+    <li>Commercial venture: Any product, service, or business generating revenue derived substantially from the submitted idea</li>
+    <li>Gross revenue: Total revenue before deductions</li>
+  </ul>
+  <p class="bold">Conditions:</p>
+  <ul>
+    <li>Applies only where there is a clear and direct link to the submitted idea</li>
+    <li>Does not transfer ownership of your idea</li>
+    <li>Applies for a period of 5 years from first commercialisation</li>
+  </ul>
+  <p class="bold">Compliance:</p>
+  <ul>
+    <li>You agree to provide reasonable revenue reporting upon request</li>
+    <li>Disputes subject to UK jurisdiction</li>
+  </ul>
+  
+  <!-- 10. CONSUMER RIGHTS & FAIR TRADING -->
+  <h2 class="section-title">10. CONSUMER RIGHTS & FAIR TRADING</h2>
+  <p>In accordance with the Consumer Rights Act 2015 and Consumer Protection from Unfair Trading Regulations 2008:</p>
+  <ul>
+    <li>All descriptions must be accurate and not misleading</li>
+    <li>No guaranteed outcomes are implied</li>
+    <li>Pricing is transparent and final at checkout</li>
+  </ul>
+  
+  <!-- 11. DIGITAL SERVICE DELIVERY -->
+  <h2 class="section-title">11. DIGITAL SERVICE DELIVERY</h2>
+  <ul>
+    <li>AI artifacts and analysis are targeted within 24 hours</li>
+    <li>Delivery times are estimates, not guarantees</li>
+    <li>We are not liable for delays caused by technical systems</li>
+  </ul>
+  
+  <!-- 12. REFUND POLICY -->
+  <h2 class="section-title">12. REFUND POLICY</h2>
+  <ul>
+    <li>No refunds after idea submission</li>
+    <li>Refunds may be considered before submission at our discretion</li>
+  </ul>
+  
+  <!-- 13. LIMITATION OF LIABILITY -->
+  <h2 class="section-title">13. LIMITATION OF LIABILITY</h2>
+  <p>To the fullest extent permitted by law, we are not liable for:</p>
+  <ul>
+    <li>Loss of profits</li>
+    <li>Business interruption</li>
+    <li>Indirect or consequential damages</li>
+  </ul>
+  
+  <!-- 14. THIRD-PARTY SERVICES -->
+  <h2 class="section-title">14. THIRD-PARTY SERVICES</h2>
+  <p>We use:</p>
+  <ul>
+    <li>Payhip (payments)</li>
+    <li>Stripe</li>
+    <li>Google Forms (data collection)</li>
+    <li>Brevo(marketing and email communication)</li>
+  </ul>
+  <p>These platforms operate under their own terms and policies.</p>
+  
+  <!-- 15. GOVERNING LAW -->
+  <h2 class="section-title">15. GOVERNING LAW</h2>
+  <p>These Terms are governed by the laws of England and Wales, and disputes shall be subject to UK courts.</p>
+  
+  <!-- big divider before privacy (same red/gold vibe) -->
+  <hr>
+  
+  <!-- PRIVACY POLICY header exactly as given (with spaces) -->
+  <h1 class="main-headline"> PRIVACY POLICY</h1>
+  <p><strong>Effective Date: 3-17-2026</strong></p>
+  
+  <!-- 1. DATA CONTROLLER -->
+  <h2 class="section-title">1. DATA CONTROLLER</h2>
+  <p>Tokyo Lore Ideas<br>Contact: [Insert Email]</p>
+  
+  <!-- 2. DATA COLLECTED -->
+  <h2 class="section-title">2. DATA COLLECTED</h2>
+  <p>We collect:</p>
+  <ul>
+    <li>Name</li>
+    <li>Email</li>
+    <li>Idea submission</li>
+    <li>Order information</li>
+  </ul>
+  
+  <!-- 3. PURPOSE OF PROCESSING -->
+  <h2 class="section-title">3. PURPOSE OF PROCESSING</h2>
+  <p>Your data is used to:</p>
+  <ul>
+    <li>Process entries</li>
+    <li>Administer the competition</li>
+    <li>Communicate updates</li>
+    <li>Evaluate submissions</li>
+  </ul>
+  
+  <!-- 4. LEGAL BASIS -->
+  <h2 class="section-title">4. LEGAL BASIS</h2>
+  <p>We rely on:</p>
+  <ul>
+    <li>Contractual necessity</li>
+    <li>Legitimate interest</li>
+    <li>Consent (for email communications)</li>
+  </ul>
+  
+  <!-- 5. DATA SHARING -->
+  <h2 class="section-title">5. DATA SHARING</h2>
+  <p>We share data with:</p>
+  <ul>
+    <li>Payhip</li>
+    <li>Mailchimp</li>
+    <li>Google</li>
+  </ul>
+  <p>These providers may process data internationally with appropriate safeguards.</p>
+  
+  <!-- 6. DATA RETENTION -->
+  <h2 class="section-title">6. DATA RETENTION</h2>
+  <ul>
+    <li>Data retained only as necessary</li>
+    <li>Idea submissions may be archived</li>
+  </ul>
+  
+  <!-- 7. YOUR RIGHTS -->
+  <h2 class="section-title">7. YOUR RIGHTS</h2>
+  <p>Under UK GDPR, you may:</p>
+  <ul>
+    <li>Access your data</li>
+    <li>Request correction</li>
+    <li>Request deletion</li>
+    <li>Object to processing</li>
+  </ul>
+  <p>Contact: [Insert Email]</p>
+  
+  <!-- 8. DATA SECURITY -->
+  <h2 class="section-title">8. DATA SECURITY</h2>
+  <p>We implement reasonable technical and organisational measures to protect your data.</p>
+  
+  <!-- cookie policy block (exact wording) -->
+  <hr>
+  
+  <h1 class="main-headline"> COOKIE POLICY</h1>
+  <p>We use cookies to:</p>
+  <ul>
+    <li>Ensure website functionality</li>
+    <li>Improve user experience</li>
+    <li>Analyse traffic (if applicable)</li>
+  </ul>
+  <p>By using this website, you consent to the use of cookies.</p>
+  
+  <!-- PROMOTIONAL LAW & TRANSPARENCY DISCLOSURE (exact) -->
+  <div class="disclosure-box">
+    <h2 class="section-title" style="margin-top:0; border-left-color: var(--red);">PROMOTIONAL LAW & TRANSPARENCY DISCLOSURE</h2>
+    <p>To comply with UK advertising and promotional laws:</p>
+    <ul>
+      <li>This is a skill-based competition</li>
+      <li>Free entry is available and equally judged</li>
+      <li>No purchase is required to participate</li>
+      <li>All claims regarding odds or benefits are illustrative only</li>
+      <li>Entry limits and deadlines are genuine and enforced</li>
+    </ul>
+  </div>
+  
+  <!-- final subtle line – nothing added or removed -->
+  <p class="small-note" style="margin-top:2.5rem; opacity:0.5;">&nbsp;</p>
+  <!-- every word from the original document is preserved above -->
+</div>
+<footer>
+  <div class="footer-brand">Tokyo Lore Ideas</div>
+  <div class="footer-legal">
+    A Crowbar Ventures Ltd product · Company No. 16426727 · Registered in England & Wales<br>
+    Ideas are never shared publicly · Reviewed under confidentiality<br>
+    By submitting you grant Tokyo Lore a permanent non-exclusive 3% stake in any commercial venture arising from your submission
+  </div>
+  <!-- Legal footer zone with all mandatory disclaimers -->
+  <div class="footer-disclaimer-zone">
+    <p><strong>GENERAL DISCLAIMER</strong> Tokyo Lore Ideas provides a platform for idea submission and evaluation. All outcomes and results are indicative only.</p>
+    <p><strong>DATA & PRIVACY DISCLAIMER</strong> Personal data is processed in accordance with our Privacy Policy.</p>
+    <p><strong>THIRD-PARTY DISCLAIMER</strong> We use third-party platforms for payments, data collection, and communication.</p>
+    <p><strong>LEGAL DISCLAIMER</strong> Nothing on this platform constitutes legal, financial, or business advice.</p>
+    <p><strong>VAT / TAX INFORMATION</strong> Tokyo Lore Ideas is not registered for VAT in the United Kingdom. Therefore, no VAT is charged on any purchases and all prices shown are final.</p>
+  </div>
+</footer>
+</body>
+</html>
