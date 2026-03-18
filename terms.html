@@ -7,7 +7,14 @@
   <!-- same vibe: Bebas, Crimson, IBM Plex Mono, noir/red/gold palette -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
+    :root{--black:#080808;--white:#f0ebe2;--red:#e63222;--gold:#d4a843;--dim:#2a2a2a;--mid:#666;--fog:rgba(240,235,226,0.06)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Crimson Pro',serif;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5}
     * {
       margin: 0;
       padding: 0;
@@ -48,7 +55,19 @@
   footer{flex-direction:column;text-align:center}
   .footer-legal{text-align:center}
 }
-    .footer-disclaimer-zone{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.03em;color:var(--mid);line-height:1.5;margin-top:16px;border-top:1px solid rgba(240,235,226,.1);padding-top:16px;width:100%}
+.footer-disclaimer-zone{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.03em;color:var(--mid);line-height:1.5;margin-top:16px;border-top:1px solid rgba(240,235,226,.1);padding-top:16px;width:100%}
+.footer-disclaimer-zone p{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:8px;
+    letter-spacing:.03em;
+    color:var(--mid);
+}
+.footer-disclaimer-zone strong{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:8px;
+    letter-spacing:.03em;
+    color:var(--mid);
+}
 .footer-disclaimer-zone p{margin:4px 0;}
     
 footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
