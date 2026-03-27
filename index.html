@@ -230,7 +230,7 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
   <div class="section-tag">Idea Protection</div>
   <h2 class="section-title">Your Idea<br>Stays Private.</h2>
   <p class="section-body">
-    Only judges see your full submission.<br><br>
+    Only judges see your submission.<br><br>
     Your public artifact never reveals your idea.<br><br>
     You retain ownership of your idea.<br><br>
     
@@ -250,13 +250,39 @@ footer{border-top:1px solid rgba(240,235,226,.07);padding:32px clamp(24px,6vw,96
 
 <div class="divider"></div>
 
+<!-- UPDATED PRIZE SECTION -->
+
 <section class="section">
-  <div class="section-tag">Prize Credibility</div>
-  <h2 class="section-title">Round 01<br>Prize Secured.</h2>
+  <div class="section-tag">The prize</div>
+
+  <h2 class="section-title">Round 01 Trip Prize</h2>
+
   <p class="section-body">
-    Entries close permanently at 100.<br><br>
-    Winner announced publicly.
+    "The winner receives a real trip — flights and hotel — booked entirely by us.<br><br>
+
+    Trip value is funded by 50% of all entry fees collected.<br><br>
+
+    Current prize pool: <strong id="prizeCounter">$0</strong> — grows with every entry.<br><br>
+
+    Minimum trip value guaranteed: $500."
   </p>
+
+  <p class="section-body" style="margin-top:24px;">
+    "Enter now. Your odds are better early. The prize gets bigger as the round fills. Both things are true at the same time."
+  </p>
+
+  <p class="section-body" style="margin-top:24px;">
+    "Whatever happens, the Round 01 winner travels. $500 minimum. No exceptions."
+  </p>
+
+  <!-- SIMPLE MANUAL COUNTER SCRIPT -->
+  <script>
+    // Manually update this value twice daily
+    let prizePool = 0; // update this number manually (e.g., 1250)
+
+    document.getElementById("prizeCounter").innerText = "$" + prizePool;
+  </script>
+
 </section>
 <div class="divider"></div>
 
